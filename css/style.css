@@ -1,0 +1,35 @@
+html, body { margin: 0; height: 100%; overflow: hidden; background: #d9ecf7; font-family: system-ui, sans-serif; }
+#app canvas { display: block; }
+#vr {
+  position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%);
+  padding: 14px 30px; font-size: 18px; font-weight: 700;
+  color: #2a1c0c; background: #e2b04a; border: 0; border-radius: 12px; cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+}
+#vr:disabled { background: #6b5a45; color: #efe4c8; cursor: default; }
+#hint {
+  position: fixed; left: 16px; top: 14px; color: #f6eedb; font-size: 14px;
+  background: rgba(36,26,16,0.7); padding: 6px 10px; border-radius: 8px; pointer-events: none;
+}
+#hint:empty { display: none; }
+#fps {
+  display: none; position: fixed; right: 16px; top: 14px; color: #ffdf6e; font: bold 15px monospace;
+  background: rgba(0,0,0,0.6); padding: 4px 8px; border-radius: 6px; pointer-events: none;
+}
+/* Mira do modo PC: segue o mouse */
+#cross {
+  display: none; position: fixed; left: -15px; top: -15px; width: 30px; height: 30px; pointer-events: none;
+  background:
+    linear-gradient(#fff, #fff) center / 2px 30px no-repeat,
+    linear-gradient(#fff, #fff) center / 30px 2px no-repeat;
+  filter: drop-shadow(0 0 2px #000);
+}
+#cross::after {
+  content: ''; position: absolute; inset: 9px; border: 2px solid #fff; border-radius: 50%;
+}
+#power {
+  display: none; position: fixed; left: 50%; bottom: 90px; transform: translateX(-50%);
+  width: 240px; height: 14px; border-radius: 7px; background: rgba(36,26,16,0.7); overflow: hidden;
+  border: 2px solid #e2b04a; pointer-events: none;
+}
+#power > div { height: 100%; width: 0; background: linear-gradient(90deg, #e2b04a, #d9332b); }
